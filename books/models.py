@@ -1,8 +1,6 @@
 from django.db import models
 from django.db.models.deletion import CASCADE
 
-# Create your models here.
-
 
 class Author(models.Model):
     title = models.CharField(max_length=200)
@@ -30,4 +28,4 @@ class Review(models.Model):
     book = models.ForeignKey(Book, on_delete=CASCADE)
 
     def __str__(self):
-        return self.title
+        return f"{self.book} - {self.title}"

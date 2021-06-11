@@ -1,0 +1,9 @@
+{% extends 'books/base.html' %}
+{% block title %}ShopKart- {{book.name}}{% endblock %}
+{% block content %} 
+<section>
+    <h1 class="text-3xl text-center underline"> {{book.name}} <h1>
+    <img src ="{{book.thumbnailUrl}}" />
+    <p class="text-center">Author:{{book.authors.all | join:', '}}</p>
+</section>
+{% endblock %}

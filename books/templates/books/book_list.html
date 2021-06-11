@@ -1,0 +1,17 @@
+{% extends 'books/base.html' %}
+{% block title %}ShopKart-Book List{% endblock %}
+{% block content %}
+<section>
+   <h1 class="text-3xl text-center underline"> Books <h1>
+   <div class="grid grid-cols-4 gap-4 mt-10">
+   {% for book in book_list %}
+   <a href="/book/{{book.id}}" class="justify-self-center text-center my-4" target="_blank">
+   <div class="flex justify-center">
+      <img src="{{book.thumbnailUrl}}" width="200" />
+   </div>
+      <p class="text-lg text-gray-700">{{book.name}}</p>
+   </a>
+   {% endfor %}
+   </div>
+</section>
+{% endblock content %}
